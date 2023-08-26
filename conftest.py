@@ -1,5 +1,6 @@
 import os
 
-WORK_DIR_PATH = os.path.dirname(os.path.abspath(__file__))
-RESOURCES_DIR_PATH = os.path.join(WORK_DIR_PATH, 'resources')
+CURRENT_FILE_PATH = os.path.abspath(__file__)
+PROJECT_ROOT_PATH = os.path.dirname(CURRENT_FILE_PATH)
+JOINED_PATH = os.path.join(PROJECT_ROOT_PATH, 'resources')
 
