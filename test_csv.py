@@ -14,3 +14,6 @@ def test_csv():
         result = []
         for row in csvreader:
             result.append(row)
+
+    assert result[0] == ['Bonny', 'Born', 'Peter']
+    assert result[1] == ['Alex', 'Serj', 'Yana']
