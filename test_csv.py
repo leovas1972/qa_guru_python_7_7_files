@@ -1,7 +1,7 @@
 import csv
 # TODO оформить в тест, добавить ассерты и использовать универсальный путь
 
-with open('resources/new_csv.csv', 'w') as csv_file:
+with open('resources/new_csv.csv', 'w', newline='') as csv_file:
     csvwriter = csv.writer(csv_file, delimiter=';')
     csvwriter.writerow(['Bonny', 'Born', 'Peter'])
     csvwriter.writerow(['Alex', 'Serj', 'Yana'])
