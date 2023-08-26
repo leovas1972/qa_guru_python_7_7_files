@@ -11,5 +11,6 @@ def test_csv():
 
     with open(os.path.join(RESOURCES_DIR_PATH, 'new_csv.csv')) as csv_file:
         csvreader = csv.reader(csv_file, delimiter=';')
+        result = []
         for row in csvreader:
-            print(row)
+            result.append(row)
