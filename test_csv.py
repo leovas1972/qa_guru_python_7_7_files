@@ -1,15 +1,15 @@
 import csv, os
 
-from conftest import RESOURCES_DIR_PATH
+from conftest import JOINED_PATH
 # TODO оформить в тест, добавить ассерты и использовать универсальный путь
 
 def test_csv():
-    with open(os.path.join(RESOURCES_DIR_PATH, 'new_csv.csv'), 'w', newline='') as csv_file:
+    with open(os.path.join(JOINED_PATH, 'new_csv.csv'), 'w', newline='') as csv_file:
         csvwriter = csv.writer(csv_file, delimiter=';')
         csvwriter.writerow(['Bonny', 'Born', 'Peter'])
         csvwriter.writerow(['Alex', 'Serj', 'Yana'])
 
-    with open(os.path.join(RESOURCES_DIR_PATH, 'new_csv.csv')) as csv_file:
+    with open(os.path.join(JOINED_PATH, 'new_csv.csv')) as csv_file:
         csvreader = csv.reader(csv_file, delimiter=';')
         result = []
         for row in csvreader:
@@ -18,4 +18,4 @@ def test_csv():
     assert result[0] == ['Bonny', 'Born', 'Peter']
     assert result[1] == ['Alex', 'Serj', 'Yana']
 
-    os.remove(os.path.join(RESOURCES_DIR_PATH, 'new_csv.csv'))
+    os.remove(os.path.join(JOINED_PATH, 'new_csv.csv'))
