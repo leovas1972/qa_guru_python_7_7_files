@@ -17,3 +17,5 @@ def test_csv():
 
     assert result[0] == ['Bonny', 'Born', 'Peter']
     assert result[1] == ['Alex', 'Serj', 'Yana']
+
+    os.remove(os.path.join(RESOURCES_DIR_PATH, 'new_csv.csv'))
