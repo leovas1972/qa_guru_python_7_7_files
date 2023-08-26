@@ -1,12 +1,15 @@
-import csv
+import csv, os
+
+from conftest import RESOURCES_DIR_PATH
 # TODO оформить в тест, добавить ассерты и использовать универсальный путь
 
-with open('resources/new_csv.csv', 'w', newline='') as csv_file:
-    csvwriter = csv.writer(csv_file, delimiter=';')
-    csvwriter.writerow(['Bonny', 'Born', 'Peter'])
-    csvwriter.writerow(['Alex', 'Serj', 'Yana'])
+def test_csv():
+    with open(os.path.join(RESOURCES_DIR_PATH, 'new_csv.csv'), 'w', newline='') as csv_file:
+        csvwriter = csv.writer(csv_file, delimiter=';')
+        csvwriter.writerow(['Bonny', 'Born', 'Peter'])
+        csvwriter.writerow(['Alex', 'Serj', 'Yana'])
 
-with open('resources/new_csv.csv') as csv_file:
-    csvreader = csv.reader(csv_file, delimiter=';')
-    for row in csvreader:
-        print(row)
+    with open(os.path.join(RESOURCES_DIR_PATH, 'new_csv.csv')) as csv_file:
+        csvreader = csv.reader(csv_file, delimiter=';')
+        for row in csvreader:
+            print(row)
